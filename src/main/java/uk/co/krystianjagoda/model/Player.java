@@ -1,6 +1,7 @@
 package uk.co.krystianjagoda.model;
 
 public class Player {
+
     private final String firstName;
     private final String lastName;
 
@@ -38,5 +39,13 @@ public class Player {
         int result = getFirstName() != null ? getFirstName().hashCode() : 0;
         result = 31 * result + (getLastName() != null ? getLastName().hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }

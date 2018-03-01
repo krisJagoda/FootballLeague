@@ -22,6 +22,10 @@ public class Team {
     }
 
     public void addNewTeamMember(Player player) {
+
+        if (player == null){
+            throw new IllegalArgumentException("New players cannot be null.");
+        }
         teamMembers.add(player);
     }
 
@@ -49,5 +53,12 @@ public class Team {
         int result = getName().hashCode();
         result = 31 * result + getTeamMembers().hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

@@ -1,7 +1,6 @@
 package uk.co.krystianjagoda.model;
 
 import org.junit.Test;
-
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 
