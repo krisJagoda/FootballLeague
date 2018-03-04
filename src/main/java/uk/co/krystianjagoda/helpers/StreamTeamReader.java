@@ -23,11 +23,13 @@ public class StreamTeamReader extends AbstractTeamReader {
         Team team = createNewTeam(file);
 
         Files.lines(Paths.get(path))
-                .map(line -> {
-                    String[] data = line.split(";");
-                    return new Player(data[0], data[1]);
-                }).forEach(team::addNewTeamMember);
+                .map(this::readFromLine).forEach(team::addNewTeamMember);
 
         return team;
+    }
+
+    private Player readFromLine(String line){
+        String[] data = line.split(";");
+        return new Player(data[0], data[1]);
     }
 }
