@@ -1,9 +1,7 @@
 package uk.co.krystianjagoda.helpers.readers;
 
-import uk.co.krystianjagoda.helpers.readers.AbstractTeamReader;
 import uk.co.krystianjagoda.model.Player;
 import uk.co.krystianjagoda.model.Team;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -24,10 +22,11 @@ public class LinesTeamReader extends AbstractTeamReader {
 
         List<String> lines = Files.readAllLines(Paths.get(path));
 
-        for (int i = 0; i < lines.size(); i++) {
-            team.addNewTeamMember(new Player(lines.get(0), lines.get(1)));
-
+        for (String line : lines) {
+            String[] data = line.split(";");
+            team.addNewTeamMember(new Player(data[0], data[1]));
         }
+
         return team;
     }
 }
