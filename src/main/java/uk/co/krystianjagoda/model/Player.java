@@ -10,7 +10,6 @@ public class Player {
         if (firstName == null || firstName.isEmpty() || lastName == null || lastName.isEmpty()) {
             throw new IllegalArgumentException("You must provide both the first and last name of the player.");
         }
-
         this.firstName = firstName;
         this.lastName = lastName;
     }
