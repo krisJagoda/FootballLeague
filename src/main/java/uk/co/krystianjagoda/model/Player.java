@@ -1,8 +1,5 @@
 package uk.co.krystianjagoda.model;
 
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
-
 public class Player {
 
     private final String firstName;
