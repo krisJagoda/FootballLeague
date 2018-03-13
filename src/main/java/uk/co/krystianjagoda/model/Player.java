@@ -1,5 +1,8 @@
 package uk.co.krystianjagoda.model;
 
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
+
 public class Player {
 
     private final String firstName;
@@ -11,7 +14,11 @@ public class Player {
             throw new IllegalArgumentException("You must provide both the first and last name of the player.");
         }
 
-        this.firstName = firstName;
+
+
+        checkNotNull(firstName, "Player's name cannot be null.");
+        checkNotNull(lastName,"Player's last name cannot be null");
+        checkArgument(!firstName.isEmpty(), "Player's first cannot cannot be empty." );
         this.lastName = lastName;
     }
 
