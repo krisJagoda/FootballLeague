@@ -1,5 +1,6 @@
-package uk.co.krystianjagoda.helpers;
+package uk.co.krystianjagoda.helpers.readers;
 
+import uk.co.krystianjagoda.helpers.readers.AbstractTeamReader;
 import uk.co.krystianjagoda.model.Player;
 import uk.co.krystianjagoda.model.Team;
 

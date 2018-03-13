@@ -2,24 +2,24 @@ package uk.co.krystianjagoda.model;
 
 import java.util.*;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 public class Team {
     private final String name;
     private final Set<Player> teamMembers = new HashSet<>();
 
     public Team(String name) throws IllegalArgumentException {
 
-        if (name == null || name.isEmpty()) {
+        if (name.isEmpty()) {
             throw new IllegalArgumentException(String.format("You cannot provide either empty or %s team's name.", name));
         }
-        this.name = name;
+        this.name = checkNotNull(name, String.format("You cannot provide either empty or %s team's name.", name));
 
     }
 
     public void addNewTeamMember(Player player) {
 
-        if (player == null) {
-            throw new IllegalArgumentException("New players cannot be null.");
-        }
+        checkNotNull(player,"New players cannot be null.");
         teamMembers.add(player);
     }
 

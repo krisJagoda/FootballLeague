@@ -1,6 +1,7 @@
 package uk.co.krystianjagoda.helpers;
 
 import org.junit.Test;
+import uk.co.krystianjagoda.helpers.interfaces.TeamReader;
 import uk.co.krystianjagoda.model.Player;
 import uk.co.krystianjagoda.model.Team;
 
@@ -18,7 +19,7 @@ public abstract class AbstractTeamReaderTest {
     }
 
     @Test
-    public void forNullFileThrowIllegalArgumentException() throws Exception {
+    public void forNullFileThrowIllegalArgumentException() {
 
         assertThatThrownBy(() -> teamReader.read(null))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -26,7 +27,7 @@ public abstract class AbstractTeamReaderTest {
     }
 
     @Test
-    public void forAnEmptyPathToFileThrowIllegalArgumentException() throws Exception {
+    public void forAnEmptyPathToFileThrowIllegalArgumentException() {
 
         assertThatThrownBy(() -> teamReader.read(""))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -34,7 +35,7 @@ public abstract class AbstractTeamReaderTest {
     }
 
     @Test
-    public void forNonExistingFileThrowIOException() throws Exception {
+    public void forNonExistingFileThrowIOException() {
 
         String path = "src/test/resources/test.txt";
 

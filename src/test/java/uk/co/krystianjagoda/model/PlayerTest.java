@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 public class PlayerTest {
 
     @Test
-    public void forAnEmptyStringAsPlayersFirstNameThrowAnIllegalArgumentException() throws Exception {
+    public void forAnEmptyStringAsPlayersFirstNameThrowAnIllegalArgumentException() {
 
         assertThatThrownBy(() -> new Player("","Doe"))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -15,7 +15,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void forAnEmptyStringAsPlayersLastNameThrowAnIllegalArgumentException() throws Exception {
+    public void forAnEmptyStringAsPlayersLastNameThrowAnIllegalArgumentException() {
 
         assertThatThrownBy(() -> new Player("John", ""))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -23,14 +23,14 @@ public class PlayerTest {
     }
 
     @Test
-    public void forANullValueGivenAsPLayersFirstNameThrowIllegalArgumentException() throws Exception {
+    public void forANullValueGivenAsPLayersFirstNameThrowIllegalArgumentException() {
 
         assertThatThrownBy(() -> new Player(null, "Doe"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("You must provide both the first and last name of the player.");
     }
     @Test
-    public void forANullValueGivenAsPLayersLastNameThrowIllegalArgumentException() throws Exception {
+    public void forANullValueGivenAsPLayersLastNameThrowIllegalArgumentException() {
 
         assertThatThrownBy(() -> new Player("John", null))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -38,7 +38,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void forGivenFirstNameAndLastNameCreateANewInstanceOfPlayerClass() throws Exception {
+    public void forGivenFirstNameAndLastNameCreateANewInstanceOfPlayerClass() {
 
         new Player("John", "Doe");
     }

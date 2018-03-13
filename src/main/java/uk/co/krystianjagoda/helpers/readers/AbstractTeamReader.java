@@ -1,6 +1,7 @@
-package uk.co.krystianjagoda.helpers;
+package uk.co.krystianjagoda.helpers.readers;
 
 
+import uk.co.krystianjagoda.helpers.interfaces.TeamReader;
 import uk.co.krystianjagoda.model.Team;
 
 import java.io.File;

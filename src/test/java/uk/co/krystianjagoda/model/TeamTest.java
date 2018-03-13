@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 public class TeamTest {
 
     @Test
-    public void forAnEmptyStringAsTeamsNameThrowAnIllegalArgumentException() throws Exception {
+    public void forAnEmptyStringAsTeamsNameThrowAnIllegalArgumentException() {
 
         assertThatThrownBy(() -> new Team(""))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -16,23 +16,22 @@ public class TeamTest {
     }
 
     @Test
-    public void forANullValueProvidedAsTeamThrowIllegalArgumentException() throws Exception {
+    public void forANullValueProvidedAsTeamThrowIllegalArgumentException() {
 
 
         assertThatThrownBy(() -> new Team(null))
-                .isInstanceOf(IllegalArgumentException.class);
+                .isInstanceOf(NullPointerException.class);
 
     }
 
-
     @Test
-    public void forANonEmptyOrNotNullNameCreateNewTeam() throws Exception {
+    public void forANonEmptyOrNotNullNameCreateNewTeam() {
 
         new Team("Manchester United");
     }
 
     @Test
-    public void forTwoDifferentPlayersAddThemToTheTeam() throws Exception {
+    public void forTwoDifferentPlayersAddThemToTheTeam() {
         Team team = new Team("Manchester United");
         team.addNewTeamMember(new Player("Berry", "Walt"));
         team.addNewTeamMember(new Player("John", "Doe"));
@@ -42,7 +41,7 @@ public class TeamTest {
     }
 
     @Test
-    public void forAddingTheSamePlayerTwiceHeIsAssignedOnlyOnce() throws Exception {
+    public void forAddingTheSamePlayerTwiceHeIsAssignedOnlyOnce() {
         Team team = new Team("Manchester United");
 
         team.addNewTeamMember(new Player("John", "Doe"));

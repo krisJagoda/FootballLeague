@@ -22,6 +22,14 @@
             <artifactId>guava</artifactId>
             <version>24.0-jre</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava-testlib -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava-testlib</artifactId>
+            <version>24.0-jre</version>
+            <scope>test</scope>
+        </dependency>
+
 
 
         <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
